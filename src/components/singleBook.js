@@ -1,12 +1,16 @@
 import React,{useEffect,useState} from "react";
 import bookPlaceHolder from "../assets/placeholder_book.png"
+import PropTypes from "prop-types";
+
 function SingleBook(props) {
   const [selectedShelf, setSelectedShelf] = useState();
   
+  //change book shelf handler
   const handleChange=(e)=>{
     const changedState=e.target.value;
     props.handleChangedShelf(props.book, changedState);
   }
+  //handle case of book without image
   const coverImg =
   props.book.imageLinks && props.book.imageLinks.thumbnail
     ? props.book.imageLinks.thumbnail
@@ -54,4 +58,11 @@ function SingleBook(props) {
     </div>
   );
 }
+
+SingleBook.propTypes = {
+  book:PropTypes.object.isRequired,
+  handleChangedShelf:PropTypes.func.isRequired,
+  isSearch:PropTypes.bool,
+  books:PropTypes.array
+};
 export default SingleBook;
