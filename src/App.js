@@ -12,8 +12,6 @@ function BooksApp()  {
   const getAllBooks = async () => {
     BooksAPI.getAll().then(books => {setBooks(books);
     setLoading(false);});
-    
-    console.log(books);
   };
   useEffect(() => {
     getAllBooks();
