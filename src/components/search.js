@@ -49,7 +49,7 @@ function Search(props) {
   return (
     <div className="search-books">
       <div className="search-books-bar">
-        <Link className="close-search" to="/home">
+        <Link className="close-search" to="/">
           Close
         </Link>
         <div className="search-books-input-wrapper">

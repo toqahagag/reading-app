@@ -42,7 +42,7 @@ function SingleBook(props) {
           }}
         />
         <div className="book-shelf-changer">
-          <select className="checkmark" onChange={handleChange} value={selectedShelf?selectedShelf:props.book.shelf} defaultValue={selectedShelf}>
+          <select className="checkmark" onChange={handleChange} value={selectedShelf?selectedShelf:props.book.shelf?props.book.shelf:"none"} defaultValue={selectedShelf}>
             <option value="move" disabled>
               Move to...
             </option>
